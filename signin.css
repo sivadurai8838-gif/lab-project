@@ -1,0 +1,445 @@
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+:root {
+  --brand-dark: #101a3d;
+  --brand-mid: #1c3aa9;
+  --brand-light: #3b6fe0;
+  --accent-cyan: #5ad1e6;
+ 
+  --text-muted: #6b7280;
+  --border-color: #e2e5ee;
+  --success-bg: #e9f9ef;
+  --success-border: #b7e8c8;
+  --success-text: #1c7a41;
+ 
+  --font-main: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  --radius-md: 10px;
+  --transition-fast: 0.2s ease;
+}
+ 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+ 
+body {
+  font-family: var(--font-main);
+  color: #14142b;
+  background: #fff;
+}
+ 
+/* =========================================================
+   PAGE LAYOUT — split screen (2 columns on desktop)
+========================================================= */
+.page {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+ 
+.panel {
+  position: relative;
+  padding: 56px 48px;
+  display: flex;
+  flex-direction: column;
+}
+ 
+/* =========================================================
+   LEFT PANEL — BRANDING
+========================================================= */
+.panel--brand {
+  background: linear-gradient(160deg, var(--brand-dark) 0%, var(--brand-mid) 55%, var(--brand-light) 100%);
+  color: #fff;
+  overflow: hidden;
+  justify-content: space-between;
+}
+ 
+.glow {
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0) 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+ 
+.panel__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  flex: 1;
+}
+ 
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+ 
+.brand__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+ 
+.brand__name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+ 
+.brand__location {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 2px;
+}
+ 
+.tagline {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+ 
+.tagline__highlight {
+  color: var(--accent-cyan);
+}
+ 
+.tagline__desc {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 480px;
+}
+ 
+/* Feature cards */
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+ 
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+ 
+.feature-card:hover {
+  background: rgba(255, 255, 255, 0.14);
+  transform: translateY(-2px);
+}
+ 
+.feature-card__icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+ 
+.feature-card h3 {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+ 
+.feature-card p {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.4;
+}
+ 
+.panel__footer {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+ 
+/* =========================================================
+   RIGHT PANEL — SIGN IN FORM
+========================================================= */
+.panel--form {
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+ 
+.home-link {
+  position: absolute;
+  top: 28px;
+  right: 32px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--brand-mid);
+  text-decoration: none;
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+}
+ 
+.home-link:hover {
+  background: #f3f5fd;
+  box-shadow: 0 4px 10px rgba(28, 58, 169, 0.1);
+}
+ 
+.form-wrap {
+  width: 100%;
+  max-width: 400px;
+}
+ 
+.form-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--brand-mid), var(--brand-light));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+ 
+.form-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+ 
+.form-subtitle {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 26px;
+}
+ 
+.field-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  margin-top: 16px;
+}
+ 
+.field-label:first-of-type {
+  margin-top: 0;
+}
+ 
+.captcha-sum {
+  display: inline-block;
+  background: var(--brand-light);
+  color: #fff;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+}
+ 
+.input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+ 
+.input-icon {
+  position: absolute;
+  left: 14px;
+  font-size: 0.95rem;
+  opacity: 0.6;
+  pointer-events: none;
+}
+ 
+.input-wrap input {
+  width: 100%;
+  padding: 12px 14px 12px 40px;
+  font-family: inherit;
+  font-size: 0.92rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: #f9fafc;
+  color: #14142b;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+ 
+.input-wrap input::placeholder {
+  color: #9aa0ac;
+}
+ 
+.input-wrap input:focus {
+  outline: none;
+  border-color: var(--brand-light);
+  box-shadow: 0 0 0 3px rgba(59, 111, 224, 0.15);
+  background: #fff;
+}
+ 
+.input-wrap input.input-error {
+  border-color: #e15b5b;
+  box-shadow: 0 0 0 3px rgba(225, 91, 91, 0.12);
+}
+ 
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.95rem;
+  opacity: 0.65;
+  transition: opacity var(--transition-fast);
+}
+ 
+.toggle-password:hover {
+  opacity: 1;
+}
+ 
+.error-msg {
+  min-height: 18px;
+  font-size: 0.8rem;
+  color: #e15b5b;
+  margin-top: 8px;
+}
+ 
+/* Submit button (one real <button>, so form validation runs first) */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+.Otp-btn{
+    border:none;
+    cursor:pointer;
+    font-family:inherit;
+    font-size:0.95rem;
+    background:#3b5bff;
+    color:#fff;
+    padding:16px 35px;
+    border-radius:50px;
+    font-weight:600;
+    transition:.3s;
+    box-shadow:0 10px 25px rgba(59,91,255,0.25);
+}
+
+.Otp-btn:hover{
+    transform:translateY(-4px);
+}
+
+.Otp-btn:disabled{
+    opacity:.7;
+    cursor:not-allowed;
+    transform:none;
+}
+
+.security-label {
+  text-align: center;
+  font-size: 0.72rem;
+  color: #9aa0ac;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 22px 0 14px;
+  position: relative;
+}
+ 
+.security-label::before,
+.security-label::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 30%;
+  height: 1px;
+  background: var(--border-color);
+}
+ 
+.security-label::before { left: 0; }
+.security-label::after { right: 0; }
+ 
+.otp-notice {
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-text);
+  font-size: 0.82rem;
+  line-height: 1.5;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+}
+ 
+.panel__footer--center {
+  text-align: center;
+  margin-top: 22px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+ 
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+ 
+.shake {
+  animation: shake 0.3s ease;
+}
+ 
+@media (prefers-reduced-motion: reduce) {
+  .shake,
+  .feature-card {
+    animation: none;
+    transition: none;
+  }
+}
+ 
+/* =========================================================
+   RESPONSIVE — TABLET & MOBILE (stack panels vertically)
+========================================================= */
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
+ 
+  .panel--brand {
+    padding: 40px 28px;
+  }
+ 
+  .panel--form {
+    padding: 60px 24px 40px;
+  }
+ 
+  .home-link {
+    top: 18px;
+    right: 20px;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .panel {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+ 
+  .tagline {
+    font-size: 1.6rem;
+  }
+ 
+  .form-wrap {
+    max-width: 100%;
+  }
+}

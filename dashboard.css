@@ -1,0 +1,66 @@
+/* dashboard.css — simple page shown after Admin access (matches the Qvesys Lab home page style) */
+*{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins','Segoe UI',sans-serif; }
+
+body{ background:linear-gradient(135deg,#f5f7ff,#eef2ff); min-height:100vh; }
+
+header{
+    background:#fff;
+    padding:16px 6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    box-shadow:0 2px 15px rgba(0,0,0,0.05);
+}
+
+.logo{ font-size:1.5rem; font-weight:700; color:#3b5bff; }
+
+.right{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+.welcome{ color:#6b7280; font-size:14px; }
+
+.logout-btn{
+    border:none;
+    cursor:pointer;
+    background:#dc3545;
+    color:#fff;
+    padding:10px 24px;
+    border-radius:30px;
+    font-size:14px;
+    font-weight:600;
+    transition:.3s;
+}
+.logout-btn:hover{ background:#b92d3b; transform:translateY(-2px); }
+
+main{ padding:50px 6%; max-width:1100px; margin:auto; }
+h1{ color:#1d2433; font-size:2rem; margin-bottom:6px; }
+.sub{ color:#6b7280; margin-bottom:30px; }
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:22px;
+}
+
+.card{
+    background:#fff;
+    padding:24px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.05);
+}
+.card h3{ color:#1d2433; margin-bottom:8px; font-size:1.05rem; }
+.card p{ color:#6b7280; font-size:14px; }
+
+.back-link{
+    display:inline-block;
+    margin-top:30px;
+    color:#3b5bff;
+    text-decoration:none;
+    font-weight:600;
+}
+.back-link:hover{ text-decoration:underline; }
+
+@media(max-width:600px){
+    h1{ font-size:1.5rem; }
+    header{ justify-content:center; text-align:center; }
+}

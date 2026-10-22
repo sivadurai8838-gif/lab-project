@@ -1,0 +1,166 @@
+/* =========================
+   RESET
+========================= */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* =========================
+   BODY
+========================= */
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#f4f7fc;
+}
+
+/* =========================
+   POPUP CONTAINER
+========================= */
+.popup{
+    width:600px;
+    background:#ffffff;
+    padding:35px;
+    border-radius:8px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    text-align:center;
+    animation:popupShow .4s ease;
+}
+
+/* =========================
+   TITLE
+========================= */
+.popup h1{
+    font-size:42px;
+    color:#4a4a4a;
+    margin-bottom:20px;
+    font-weight:700;
+}
+
+.popup p{
+    font-size:18px;
+    color:#555;
+    margin-bottom:20px;
+}
+
+/* =========================
+   INPUT
+========================= */
+.input-box{
+    width:100%;
+    margin-bottom:28px;
+}
+
+.input-box input{
+    width:100%;
+    padding:15px;
+    font-size:18px;
+    border:1px solid #a8d8ff;
+    border-radius:4px;
+    outline:none;
+}
+
+.input-box input:focus{
+    border-color:#2d5bff;
+    box-shadow:0 0 10px rgba(45,91,255,0.2);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+}
+
+.btn{
+    border:none;
+    padding:12px 35px;
+    font-size:20px;
+    cursor:pointer;
+    border-radius:4px;
+    transition:.3s;
+}
+
+.ok-btn{
+    background:#2d5bff;
+    color:#fff;
+}
+
+.ok-btn:hover{
+    background:#1c49ea;
+}
+
+.cancel-btn{
+    background:#6c7a89;
+    color:#fff;
+}
+
+.cancel-btn:hover{
+    background:#596572;
+}
+
+/* =========================
+   SUCCESS MESSAGE
+========================= */
+.success{
+    display:none;
+    margin-top:20px;
+    color:#28a745;
+    font-size:18px;
+    font-weight:600;
+}
+
+/* =========================
+   ANIMATION
+========================= */
+@keyframes popupShow{
+    from{
+        opacity:0;
+        transform:scale(.9);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+@media(max-width:768px){
+
+    .popup{
+        width:95%;
+        padding:25px;
+    }
+
+    .popup h1{
+        font-size:32px;
+    }
+
+    .buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+}
+
+/* ==========================================
+   ADDITIONS FOR INTEGRATED PROJECT
+========================================== */
+.popup{ max-width:95%; }
+
+.btn:focus-visible,
+.input-box input:focus-visible{
+    outline:2px solid #2d5bff;
+    outline-offset:2px;
+}
