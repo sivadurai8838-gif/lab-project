@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verify Access | Qvesys Secure</title>
+
+<!-- Google Fonts: Poppins -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- Font Awesome (icons) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<!-- This page's CSS -->
+<link rel="stylesheet" href="css/otp.css">
+</head>
+
+<body>
+<div class="split-container">
+
+<!-- Left Visual Side -->
+<div class="visual-side">
+<div class="visual-content">
+<div class="brand-logo">
+<i class="fas fa-flask"></i>
+<span id="companyName">Lab System</span>
+</div>
+<h1>Security <span>Verified</span></h1>
+<p>We've added an extra layer of security to your account. Please complete the verification to continue
+your session.</p>
+
+<div class="feature-list">
+<div class="feature-item">
+<i class="fas fa-shield-halved"></i>
+Multi-factor Authentication Active
+</div>
+<div class="feature-item">
+<i class="fas fa-user-lock"></i>
+Session Encrypted &amp; Secure
+</div>
+<div class="feature-item">
+<i class="fas fa-clock-rotate-left"></i>
+OTP Valid for 5 Minutes
+</div>
+</div>
+</div>
+</div>
+
+<!-- Right Form Side -->
+<div class="form-side">
+<div class="form-container">
+<div class="form-header">
+<div class="form-header-icon">
+<i class="fas fa-key"></i>
+</div>
+<h2>Verify OTP</h2>
+<p>Enter the code sent to your registered email to gain access.</p>
+</div>
+
+<!-- Demo only: no email server is connected, so the OTP is shown here -->
+<div class="demo-box">
+Demo mode — your OTP is <strong id="demoOtp">------</strong>
+</div>
+
+<form id="otpForm" novalidate>
+<div class="input-group">
+<label class="input-label" for="otpField">Verification Code</label>
+<div class="otp-input-wrapper">
+<i class="fas fa-shield"></i>
+<input type="password" name="otp_entered" id="otpField" class="otp-input"
+placeholder="••••••" required maxlength="10" autocomplete="one-time-code">
+</div>
+</div>
+
+<p class="otp-error" id="otpError"></p>
+
+<!-- Next: checks the OTP, then opens the Verify Check page -->
+<button type="submit" class="verify-btn" id="verify-btn">
+<i class="fas fa-check-double"></i>
+<span>Verify &amp; Continue</span>
+</button>
+</form>
+
+<div class="resend-container">
+<span id="resend-timer">Resend OTP in <strong id="timer-sec">60</strong>s</span>
+<button type="button" class="resend-link" id="resend-link" style="display:none;">Resend OTP</button>
+</div>
+
+<!-- Back to Sign In -->
+<a href="signin.html" class="back-to-login">
+<i class="fas fa-arrow-left-long"></i> Back to Login
+</a>
+</div>
+</div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script>
+// Company name (this replaces the PHP company.json lookup)
+document.getElementById('companyName').textContent = APP_CONFIG.companyName || 'Lab System';
+</script>
+<script src="js/otp.js"></script>
+</body>
+
+</html>

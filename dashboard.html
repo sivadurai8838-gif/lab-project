@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard | Qvesys Lab</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">Qvesys Lab</div>
+    <div class="right">
+        <span class="welcome">Welcome, <strong id="userName">Admin</strong></span>
+        <button type="button" class="logout-btn" id="logoutBtn">Logout</button>
+    </div>
+</header>
+
+<main>
+    <h1>Admin Dashboard</h1>
+    <p class="sub">You have been verified and granted admin access.</p>
+
+    <div class="grid">
+        <div class="card"><h3>🧪 Test Entry &amp; Results</h3><p>Patient tests, specimen tracking and result entry.</p></div>
+        <div class="card"><h3>📊 Reports</h3><p>Day, master, patient, test and financial reports.</p></div>
+        <div class="card"><h3>👥 Patients</h3><p>Patient records and history.</p></div>
+        <div class="card"><h3>🛡️ User Access</h3><p>Role-based permissions for every user.</p></div>
+    </div>
+
+    <a href="admin.html" class="back-link">← Back to Admin Access</a>
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

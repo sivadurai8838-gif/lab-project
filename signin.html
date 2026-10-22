@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In | Jayalakshmi Clinic Laboratory</title>
+
+  <!-- Poppins font (the CSS already asks for it) -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- This page's CSS -->
+  <link rel="stylesheet" href="css/signin.css">
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- ============ LEFT PANEL — BRANDING ============ -->
+    <section class="panel panel--brand">
+      <div class="glow" aria-hidden="true"></div>
+
+      <div class="panel__content">
+        <div class="brand">
+          <div class="brand__icon">🧪</div>
+          <div>
+            <h2 class="brand__name">JAYALAKSHMI CLINIC LABORATORY</h2>
+            <p class="brand__location">Kumbakonam, Tamil Nadu</p>
+          </div>
+        </div>
+
+        <h1 class="tagline">
+          Modern Lab<br>
+          <span class="tagline__highlight">Management System</span>
+        </h1>
+
+        <p class="tagline__desc">
+          Streamline your laboratory workflow with role-based access, real-time reporting,
+          and comprehensive patient management — all in one unified platform.
+        </p>
+
+        <div class="features">
+          <div class="feature-card">
+            <span class="feature-card__icon">✏️</span>
+            <div>
+              <h3>Test Entry &amp; Results</h3>
+              <p>Manage patient tests, specimen tracking &amp; result entry</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-card__icon">📊</span>
+            <div>
+              <h3>Comprehensive Reports</h3>
+              <p>Day, Master, Patient, Test &amp; financial reports</p>
+            </div>
+          </div>
+
+          <div class="feature-card">
+            <span class="feature-card__icon">🛡️</span>
+            <div>
+              <h3>Role-Based Access Control</h3>
+              <p>Secure per-user permissions with OTP verification</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="panel__footer">© 2026 Jayalakshmi Clinic Laboratory. All rights reserved.</p>
+      </div>
+    </section>
+
+    <!-- ============ RIGHT PANEL — SIGN IN FORM ============ -->
+    <section class="panel panel--form">
+      <!-- Back to Home -->
+      <a href="index.html" class="home-link">🏠 Home</a>
+
+      <div class="form-wrap">
+        <div class="form-icon">👤</div>
+        <h1 class="form-title">Sign In</h1>
+        <p class="form-subtitle">Enter your credentials to access the system</p>
+
+        <form id="signInForm" novalidate>
+
+          <!-- Username -->
+          <label class="field-label" for="username">Username</label>
+          <div class="input-wrap">
+            <span class="input-icon">👤</span>
+            <input type="text" id="username" name="username" placeholder="Enter your username" autocomplete="username" required>
+          </div>
+
+          <!-- Password -->
+          <label class="field-label" for="password">Password</label>
+          <div class="input-wrap">
+            <span class="input-icon">🔒</span>
+            <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" required>
+            <button type="button" class="toggle-password" id="togglePassword" aria-label="Show password">👁️</button>
+          </div>
+
+          <!-- Verification (simple math captcha) -->
+          <label class="field-label" for="verification">
+            Verification: <span class="captcha-sum" id="captchaSum">6 + 4</span> = ?
+          </label>
+          <div class="input-wrap">
+            <span class="input-icon">🛡️</span>
+            <input type="number" id="verification" name="verification" placeholder="Type the correct sum" required>
+          </div>
+
+          <p class="error-msg" id="errorMsg"></p>
+
+          <!-- Submit: checks the form, then opens the OTP page -->
+          <div class="buttons">
+            <button type="submit" class="Otp-btn btn-submit">⇥ Continue with OTP</button>
+          </div>
+        </form>
+
+        <p class="security-label">Security</p>
+
+        <div class="otp-notice">
+          🔓 After verification, a <strong>One-Time Password</strong> will be sent to your
+          registered email address. OTPs expire in 5 minutes.
+        </div>
+
+        <p class="panel__footer panel__footer--center">
+          © 2026 Jayalakshmi Clinic Laboratory<br>
+          Powered by Qvesys Info-Tech
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Shared + page JavaScript (order matters) -->
+  <script src="js/config.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/signin.js"></script>
+</body>
+</html>
